@@ -20,15 +20,17 @@
       <h1 class="text-3xl font-bold text-gray-900 tracking-wide select-none cursor-default">
         ICT Learning Hub
       </h1>
-      <nav>
+      
+      <!-- Desktop nav -->
+      <nav class="hidden md:block">
         <ul class="flex space-x-8 text-gray-700 font-semibold items-center">
           <li><a href="index.html" class="hover:text-orange-600 transition">Home</a></li>
           <li><a href="about.html" class="hover:text-orange-600 transition">About</a></li>
-          <li><a href="academics.html" class="hover:text-orange-600 transition font-semibold text-orange-600">Academics</a></li>
-          <li><a href="resources.html" class="hover:text-orange-600 transition">Resources</a></li>
-          <li><a href="contact.html" class="hover:text-orange-600 transition">Contact</a></li>
+          <li><a href="academics.html" class="hover:text-orange-600 transition">Academics</a></li>
+          <li><a href="resources-main page.html" class="hover:text-orange-600 transition">Resources</a></li>
+          <li><a href="contact-main.html" class="hover:text-orange-600 transition">Contact</a></li>
           <li>
-            <a href="students/login.html" 
+            <a href="login.html" 
                class="ml-4 inline-block bg-gradient-to-r from-orange-500 to-rose-500 hover:from-rose-500 hover:to-orange-500 
                       text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300">
               Student Login
@@ -36,7 +38,34 @@
           </li>
         </ul>
       </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
+        <svg class="w-8 h-8 text-gray-900 text-orange-500" fill="" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
     </div>
+
+    <!-- Mobile menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <ul class="flex flex-col space-y-4 py-4 px-6 text-gray-700 font-semibold">
+        <li><a href="index.html" class="hover:text-orange-600 transition block">Home</a></li>
+        <li><a href="about.html" class="hover:text-orange-600 transition block">About</a></li>
+        <li><a href="academics.html" class="hover:text-orange-600 transition block">Academics</a></li>
+        <li><a href="resources-main page.html" class="hover:text-orange-600 transition block">Resources</a></li>
+        <li><a href="contact-main.html" class="hover:text-orange-600 transition block">Contact</a></li>
+        <li>
+          <a href="login.html" 
+             class="inline-block bg-gradient-to-r from-orange-500 to-rose-500 hover:from-rose-500 hover:to-orange-500 
+                    text-white font-semibold py-2 px-5 rounded-full shadow-lg transition duration-300 w-full text-center">
+            Student Login
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Main Content -->
@@ -51,7 +80,15 @@
       <!-- JS will insert grade cards here -->
     </div>
   </main>
+<script>
+  // Toggle mobile menu
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
 
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-10 mt-auto">
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center max-w-6xl">

@@ -1,4 +1,3 @@
-// resource.js
 const resources = [
   {
     title: "ICT Theory Notes (Grades 10–11)",
@@ -25,7 +24,7 @@ const resources = [
 const resourceList = document.getElementById("resourceList");
 
 if (!resourceList) {
-  console.error("resourceList not found. Make sure the HTML has a div with id='resourceList'");
+  console.error("resourceList not found");
 } else {
   resources.forEach(resource => {
     const card = document.createElement("div");

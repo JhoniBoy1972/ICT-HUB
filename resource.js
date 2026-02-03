@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ];
 
   const resourceList = document.getElementById("resourceList");
+console.log("resourceList:", resourceList);
 
   resources.forEach(resource => {
     const card = document.createElement("div");

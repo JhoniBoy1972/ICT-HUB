@@ -12,13 +12,34 @@
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-yellow-600">School Portal</h1>
-      <nav class="space-x-4">
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex space-x-4">
         <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
         <a href="upload.html" class="text-gray-700 hover:text-yellow-600">Upload</a>
         <a href="resources.html" class="font-semibold text-yellow-600">Resources</a>
         <a href="contact.html" class="text-gray-700 hover:text-yellow-600">Contact</a>
       </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-gray-700 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-4 space-y-2">
+      <a href="dashboard.html" class="block text-gray-700 hover:text-yellow-600">Dashboard</a>
+      <a href="upload.html" class="block text-gray-700 hover:text-yellow-600">Upload</a>
+      <a href="resources.html" class="block font-semibold text-yellow-600">Resources</a>
+      <a href="contact.html" class="block text-gray-700 hover:text-yellow-600">Contact</a>
+    </nav>
   </header>
 
   <!-- Resources Section -->
@@ -30,5 +51,16 @@
   </main>
 
   <script src="resource.js"></script>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
 </body>
 </html>

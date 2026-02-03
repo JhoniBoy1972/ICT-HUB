@@ -1,38 +1,32 @@
 // resource.js
-document.addEventListener("DOMContentLoaded", () => {
-  // Get the container
-  const resourceList = document.getElementById("resourceList");
-
-  if (!resourceList) {
-    console.error("Error: #resourceList not found in HTML. Check your HTML file and script path.");
-    return;
+const resources = [
+  {
+    title: "ICT Theory Notes (Grades 10–11)",
+    description: "Structured theory notes covering hardware, software, networking, and data representation.",
+    link: "https://example.com/ict-theory-notes.pdf"
+  },
+  {
+    title: "ICT Past Papers & Marking Schemes",
+    description: "School and national exam past papers with official marking schemes.",
+    link: "https://example.com/ict-past-papers.pdf"
+  },
+  {
+    title: "ICT Practical Workbook",
+    description: "Hands-on exercises for Word, Excel, PowerPoint, and basic programming concepts.",
+    link: "https://example.com/ict-practical-workbook.pdf"
+  },
+  {
+    title: "ICT Revision Diagrams & Mind Maps",
+    description: "Visual summaries for databases, logic gates, networks, and system components.",
+    link: "https://example.com/ict-diagrams.pdf"
   }
+];
 
-  // ICT resources array
-  const resources = [
-    {
-      title: "ICT Theory Notes (Grades 10–11)",
-      description: "Structured theory notes covering hardware, software, networking, and data representation.",
-      link: "https://example.com/ict-theory-notes.pdf"
-    },
-    {
-      title: "ICT Past Papers & Marking Schemes",
-      description: "School and national exam past papers with official marking schemes.",
-      link: "https://example.com/ict-past-papers.pdf"
-    },
-    {
-      title: "ICT Practical Workbook",
-      description: "Hands-on exercises for Word, Excel, PowerPoint, and basic programming concepts.",
-      link: "https://example.com/ict-practical-workbook.pdf"
-    },
-    {
-      title: "ICT Revision Diagrams & Mind Maps",
-      description: "Visual summaries for databases, logic gates, networks, and system components.",
-      link: "https://example.com/ict-diagrams.pdf"
-    }
-  ];
+const resourceList = document.getElementById("resourceList");
 
-  // Loop through resources and render cards
+if (!resourceList) {
+  console.error("resourceList not found. Make sure the HTML has a div with id='resourceList'");
+} else {
   resources.forEach(resource => {
     const card = document.createElement("div");
     card.className = "bg-white p-4 rounded-xl shadow-md flex justify-between items-center";
@@ -47,6 +41,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resourceList.appendChild(card);
   });
-
   console.log("Resources rendered successfully");
-});
+}
